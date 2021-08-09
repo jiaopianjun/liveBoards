@@ -1,0 +1,58 @@
+.newBtn{
+  width: 90%;
+  height: 100rpx;
+  margin:5%;
+  margin-bottom: 2%;
+}
+
+
+.liveInfoList {
+  padding: 3%;
+}
+.liveInfoList .liveItem {
+  box-sizing: border-box;
+  padding: 2% 4%;
+  background: #fff;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+.liveItem .topInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.topInfo .accoutName {
+  font-weight: 400;
+  color: #5D6A94;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.topInfo .createTime {
+  color: #555;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.liveItem .liveTitle {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 450;
+  margin-bottom: 20rpx;
+}
+.liveItem .liveDesc {
+  font-size: 24rpx;
+  color: #777;
+  line-height: 1.3;
+  margin-bottom: 20rpx;
+}
+.liveItem .goLive {
+  color: #5D6A94;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mr-8 {
+  margin-right: 8rpx;
+}

@@ -1,0 +1,60 @@
+<!-- 页面列表 -->
+<van-skeleton title row="10" loading="{{loading}}">
+  <view class="liveInfoList">
+    <view class="liveItem" wx:for='{{pageList}}' wx:key="_id" wx:if='{{authority}}'>
+      <navigator url="../commit/commit?id={{item._id}}">
+        <view class="topInfo">
+          <view class="accoutName">
+            <van-icon name="wechat" size="20" class="mr-8" /> {{item.accountName}}
+          </view>
+          <view class="createTime">
+            <van-icon name="clock" size="20" class="mr-8" />{{item.createTime}}
+          </view>
+        </view>
+        <view class="liveTitle">
+          {{item.articleTitle}}
+        </view>
+        <view class="liveDesc">
+          {{item.articleDesc}}
+        </view>
+        <view class="bottomInfo">
+          <view class="goLive">
+            <van-icon name="chat" size="20" class="mr-8" /> 去留言
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="newBtn" wx:if='{{authority}}'>
+    <van-button type="primary" size="large" plain round bindtap="showPopup">新建留言板</van-button>
+  </view>
+  <text class='remind' style="margin:30rpx" wx:else>点击创建留言板~</text>
+</van-skeleton>
+
+<!-- 新建弹窗 -->
+<van-popup show="{{ showPopup }}" bind:close="onClose" position="top" custom-style="height: 50%;" round closeable>
+  <form bindsubmit="onSubmit">
+    <view class="writeView">
+      <van-cell title="新建留言板" />
+      <view class="textArea">
+        <textarea value="{{textValue}}" style="height: 2em" placeholder="请输入公众号名称" placeholder-style="color:gray;"
+          name="accountName" />
+      </view>
+      <view class="textArea">
+        <textarea value="{{textValue}}" style="height: 2em" placeholder="请输入文章标题" placeholder-style="color:gray;"
+          name="articleTitle" />
+      </view>
+      <view class="textArea">
+        <textarea value="{{textValue}}" style="height: 3em" placeholder="请输入文章简介" placeholder-style="color:gray;"
+          name="articleDesc" />
+      </view>
+      <view class="textArea">
+        <textarea value="{{textValue}}" style="height: 2em" placeholder="请输入文章链接" placeholder-style="color:gray;"
+          name="articleLink" />
+      </view>
+    </view>
+    <view class='submitBtnView'>
+      <button type="primary" formType="submit" plain="true">确认</button>
+    </view>
+  </form>
+</van-popup>

@@ -1,0 +1,113 @@
+<view class="liveBtn">
+  <van-button type="primary" size="large" round wx:if="{{hasUserInfo}}" bindtap="getInfo">留言</van-button>
+  <van-button type="primary" size="large" wx:else bindtap="getUserProfile" round>授权昵称头像
+  </van-button>
+</view>
+<view class="adminOpt" wx:if='{{authority}}'>
+  <van-button type="primary" bindtap='copyPage' class="vanButton">复制页面路径</van-button>
+  <van-button type="info" bindtap='getQ' class="vanButton">生成页面二维码</van-button>
+</view>
+
+<view class="articleInfo">
+  <view class="title">{{liveInfo.articleTitle}}</view>
+  <view class="info">
+    <view class="infoTime">
+      <van-icon name="clock" size="20" class="mr-8" /> {{liveInfo.createTime}}
+    </view>
+    <view class="infoView">
+      <van-icon name="comment-circle" size="20" class="mr-8" />{{liveList.length}}
+    </view>
+  </view>
+  <view class="account">
+    <view class="accountName">
+      <van-icon name="wechat" size="20" class="mr-8" /> {{liveInfo.accountName}}
+    </view>
+    <view class="goArticle" data-link="{{liveInfo.articleLink}}" wx:if="{{liveInfo.articleLink}}" bindtap="readLink">
+      跳转原文</view>
+  </view>
+</view>
+<van-skeleton title avatar row="3" loading="{{loading}}">
+  <view class="liveList">
+    <view class="liveItem" wx:for="{{liveList}}" wx:key="_id" wx:if="{{liveList.length > 0}}">
+      <view class="liveCont">
+        <view class="userImg">
+          <image src="{{item.imageSrc}}" />
+        </view>
+        <view class="userCont">
+          <view class="userTop">
+            <text class="userName">{{item.name}}</text>
+            <text class="tag" wx:if='{{item.top}}'>置顶</text>
+            <text bindtap="deleteData" data-msgId='{{item._id}}' wx:if='{{item._openid == userId}}'
+              class='delectBtn'>删除</text>
+            <view class="like">
+              <van-icon name="{{item.good ? 'good-job' : 'good-job-o'}}" size="35rpx" color="#5D6A94" class="likeIcon"
+                bind:click="setLike" data-msgId='{{item._id}}' />
+              <text wx:if='{{item.good}}'>{{item.goodCount}}</text>
+            </view>
+          </view>
+          <view class="userCommit">
+            {{item.text}}
+          </view>
+          <view class="reply">
+            <view class="replyList" wx:if="{{item.reply.length > 0}}">
+              <view class="replyItem" wx:for="{{item.reply}}" wx:for-item="reply" wx:key="index">
+                <view class="replyTop">
+                  <view class="mod">Mod</view>
+                  作者回复
+                </view>
+                <view class="replyText">
+                  {{reply.text}}
+                </view>
+              </view>
+
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="liveOpt" wx:if='{{authority}}'>
+        <van-button size="mini" plain bindtap="setTop" data-msgid='{{item._id}}' data-msgdata='{{item}}'>{{item.top ?
+          '取消置顶' : '置顶'}}</van-button>
+        <van-button size="mini" plain bindtap="showRe" data-msgId='{{item._id}}'>回复</van-button>
+        <van-button size="mini" type="danger" plain bindtap='deleteData' data-msgId='{{item._id}}'>删除</van-button>
+      </view>
+    </view>
+    <van-empty description="还没有人留言呢" wx:if="{{liveList.length == 0}}"></van-empty>
+  </view>
+</van-skeleton>
+
+
+<van-popup show="{{ showPopup }}" bind:close="onClose" position="bottom" custom-style="height: 70%;" round closeable>
+  <form bindsubmit="onSubmit">
+    <view class="writeView">
+      <van-cell title="请留言" />
+      <view class="textArea">
+        <textarea value="{{textValue}}" style="height: 10em" maxlength="{{maxNumber}}" placeholder="请输入留言内容"
+          placeholder-style="color:gray;" name="msgInput" bindinput='inputText' />
+        <span class="wordWrap">{{number}}/{{maxNumber}}</span>
+      </view>
+    </view>
+    <view class='submitBtnView'>
+      <button type="primary" formType="submit" plain="true" bindtap="subMessage">提交留言</button>
+    </view>
+  </form>
+</van-popup>
+
+<van-popup show="{{ showReply }}" bind:close="closeRe" position="top" custom-style="height: 50%;" round closeable>
+  <form bindsubmit="reSubmit">
+    <view class="writeView">
+      <van-cell title="请回复" />
+      <view class="textArea">
+        <textarea value="{{textValue}}" style="height: 8em" maxlength="{{maxNumber}}" name="msgInput"
+          bindinput='inputText' />
+        <span class="wordWrap">{{number}}/{{maxNumber}}</span>
+      </view>
+    </view>
+    <view class='submitBtnView'>
+      <button type="primary" formType="submit" plain="true">提交回复</button>
+    </view>
+  </form>
+</van-popup>
+<van-dialog use-slot title="页面二维码" show="{{ showCode }}" show-cancel-button confirmButtonText="下载二维码"
+  bind:close="closeDialog" bind:confirm="downLoadCode">
+  <image src='{{code}}' wx:if="{{code}}" class="qr" mode="widthFix" />
+</van-dialog>

@@ -1,0 +1,212 @@
+Page {
+  background: #EDECEE;
+}
+
+.liveBtn {
+  padding: 3%;
+  background: #fff;
+  margin-bottom: 3%;
+}
+
+.adminOpt {
+  padding: 3%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.adminOpt .vanButton {
+  width: 49%;
+}
+
+.adminOpt .vanButton button {
+  width: 100%;
+}
+
+.articleInfo {
+  padding: 3%;
+  background: #fff;
+  margin: 3% 0;
+  border-left: 10rpx solid #f58220;
+}
+
+.articleInfo .title {
+  color: #444;
+  font-size: 30rpx;
+  font-weight: 400;
+}
+
+.articleInfo .info {
+  margin: 3% auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.articleInfo .info .infoTime,
+.articleInfo .info .infoView {
+  display: flex;
+  align-items: center;
+}
+
+.articleInfo .account .accountName {
+  display: flex;
+  align-items: center;
+}
+
+.articleInfo .goArticle {
+  color: #5D6A94;
+  font-size: 26rpx;
+  text-align: right;
+}
+
+.liveList {
+  background: #EDECEE;
+  padding: 0 3%;
+}
+
+.liveList .liveItem {
+  padding: 3% 0;
+  border-bottom: 2rpx solid #e4e4e4;
+}
+
+.liveList .liveCont {
+  display: flex;
+}
+
+.liveCont .userImg,
+.liveCont .userImg image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 4rpx;
+}
+
+.liveCont .userImg {
+  margin-right: 20rpx;
+}
+
+.liveList .liveCont .userCont {
+  flex: 1;
+}
+
+.userCont .userTop {
+  display: flex;
+  align-items: center;
+}
+
+.userTop .userName {
+  color: #787778;
+  font-size: 32rpx;
+  font-weight: 500;
+  height: 30rpx;
+  line-height: 1;
+}
+
+.userTop .delectBtn {
+  margin-left: 15rpx;
+  font-size: 20rpx;
+  color: #5C6A92;
+}
+
+.userTop .tag {
+  padding: 4rpx 12rpx;
+  text-align: center;
+  font-size: 18rpx;
+  background-color: #E1E0E2;
+  color: #9F9E9F;
+  border-radius: 4rpx;
+  margin-left: 16rpx;
+}
+
+.userTop .like {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 20rpx;
+}
+
+.like .likeIcon {
+  margin-right: 10rpx;
+}
+
+.like text {
+  display: inline-block;
+  height: 38rpx;
+  line-height: 38rpx;
+  color: #5D6A94;
+  font-size: 30rpx;
+}
+
+
+.userCont .userCommit {
+  color: #242324;
+  font-size: 28rpx;
+  margin: 6rpx 0;
+}
+
+.userCont .replyList {
+  margin-top: 20rpx;
+  background: #E1E0E2;
+  padding: 20rpx;
+  border-radius: 4rpx;
+}
+
+.replyList .replyItem {
+  margin-bottom: 20rpx;
+  border-bottom: 2rpx solid #d8d0d0;
+  padding-bottom: 20rpx;
+}
+
+.replyList .replyItem:last-child {
+  margin-bottom: 0rpx;
+  border-bottom: none;
+  padding-bottom: 0rpx;
+}
+
+.replyList .replyTop {
+  height: 30rpx;
+  width: 100%;
+  align-items: center;
+  line-height: 30rpx;
+  display: flex;
+  font-size: 20rpx;
+  color: #5C6A92;
+  font-weight: 450;
+}
+
+.replyTop .mod {
+  display: inline-block;
+  background: #0099CC;
+  color: #Fff;
+  font-size: 18rpx;
+  padding: 0 10rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 4rpx;
+  margin-right: 10rpx;
+}
+
+.replyList .replyText {
+  font-size: 24rpx;
+  font-weight: 400;
+  margin-top: 14rpx;
+
+}
+
+.liveList .liveOpt {
+  height: 80rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qr {
+  margin: 3% auto;
+}
+
+.mr-8 {
+  margin-right: 8rpx;
+}
