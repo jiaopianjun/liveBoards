@@ -12,7 +12,7 @@
 
 2、开通云开发，同步函数
 
-3、在数据库中新建 author、message、messagePages 三个集合，并在author中新建_id: 自己微信的openid，作为管理员账户。   
+3、在数据库中新建 author、message、msgpages 三个集合，并在author中新建_id: 自己微信的openid，作为管理员账户。   
 
 4、在小程序后台创建订阅通知模板获取模板ID
 

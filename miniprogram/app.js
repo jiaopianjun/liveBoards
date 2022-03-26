@@ -7,7 +7,7 @@ App({
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
       wx.cloud.init({
-        env: '小程序云环境ID',
+        env: 'liveboard-7g1q8b5ka5cf730b', // 换成自己的云环境ID
         traceUser: true,
       })
     }
