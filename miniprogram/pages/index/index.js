@@ -71,6 +71,7 @@ Page({
       }
     }).then(res => {
       console.log(res.result.data)
+      wx.stopPullDownRefresh();
       this.setData({
         pageList: res.result.data,
         loading: false
