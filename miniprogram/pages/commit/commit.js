@@ -316,6 +316,7 @@ Page({
         db: 'message',
       }
     }).then(res => {
+      wx.stopPullDownRefresh()
       this.setData({
         liveList: res.result.data,
         loading: false
