@@ -1,5 +1,5 @@
 <view class="liveBtn">
-  <van-button type="primary" size="large" round wx:if="{{hasUserInfo}}" bindtap="getInfo">留言</van-button>
+  <van-button type="primary" size="large" round wx:if="{{hasUserInfo && authentication}}" bindtap="getInfo">留言</van-button>
   <van-button type="primary" size="large" wx:else bindtap="getUserProfile" round>授权昵称头像
   </van-button>
 </view>

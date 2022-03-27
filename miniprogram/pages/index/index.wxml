@@ -1,7 +1,7 @@
 <!-- 页面列表 -->
 <van-skeleton title row="10" loading="{{loading}}">
   <view class="liveInfoList">
-    <view class="liveItem" wx:for='{{pageList}}' wx:key="_id" wx:if='{{authority}}'>
+    <view class="liveItem" wx:for='{{pageList}}' wx:key="_id">
       <navigator url="../commit/commit?id={{item._id}}">
         <view class="topInfo">
           <view class="accoutName">
@@ -19,7 +19,7 @@
         </view>
         <view class="bottomInfo">
           <view class="goLive">
-            <van-icon name="chat" size="20" class="mr-8" /> 去留言
+            <van-icon name="chat" size="20" class="mr-8" /> {{authentication ? '去留言' : '去查看'}}
           </view>
         </view>
       </navigator>
@@ -28,7 +28,6 @@
   <view class="newBtn" wx:if='{{authority}}'>
     <van-button type="primary" size="large" plain round bindtap="showPopup">新建留言板</van-button>
   </view>
-  <text class='remind' style="margin:30rpx" wx:else>点击创建留言板~</text>
 </van-skeleton>
 
 <!-- 新建弹窗 -->
