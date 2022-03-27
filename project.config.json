@@ -29,7 +29,8 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "useIsolateContext": false,
+    "useIsolateContext": true,
+    "userConfirmedUseIsolateContext": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
@@ -37,8 +38,7 @@
     "disableUseStrict": false,
     "minifyWXML": true,
     "showES6CompileOption": false,
-    "useCompilerPlugins": false,
-    "userConfirmedUseIsolateContext": false
+    "useCompilerPlugins": false
   },
   "appid": "wxaae48a78ed6066d8",
   "projectname": "liveMessage",

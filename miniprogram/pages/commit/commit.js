@@ -192,6 +192,22 @@ Page({
   // 收到留言企业微信提醒
   wechatNotice(e) {
     let accessToken = wx.getStorageSync('access_token');
+
+    if(!accessToken) {
+      wx.showToast({
+        title: "留言成功",
+        icon: "success",
+        success: sub => {
+          this.setData({
+            textValue: "",
+            showPopup: false
+          });
+          this.getData();
+        }
+      })
+      return
+    }
+    
     let bodyData = {
       "toparty": 1,
       "msgtype": "miniprogram_notice",
