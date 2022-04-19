@@ -41,7 +41,7 @@
     "useCompilerPlugins": false
   },
   "appid": "wxaae48a78ed6066d8",
-  "projectname": "liveMessage",
+  "projectname": "LiveBoard",
   "libVersion": "2.18.1",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},

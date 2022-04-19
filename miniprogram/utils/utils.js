@@ -1,7 +1,7 @@
 module.exports = {
-  tempId: '模板ID', 
-  corpId: '企业微信corpId',
-  corpsecret: '企业微信应用corpsecret',
-  appId: "小程序appid",
-  agentId: '企业微信应用agentId'
+  tempId: 'F6XgJdrbhLA_zrWddSCSHx0i78bSgxBNFStfA04r0Ho',
+  corpId: 'ww587e8298cb403cdb',
+  corpsecret: 'WDL-wXW1d_GdGn0qIXxyoclx6pHAkTuQens98EQ3ZZI',
+  appId: "wxaae48a78ed6066d8",
+  agentId: 1000003
 }
