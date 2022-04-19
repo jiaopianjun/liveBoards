@@ -22,7 +22,9 @@
 
 4、在小程序后台创建订阅通知模板获取模板ID
 
-5、自己申请企业微信，并在应用中新建应用，复制其corpsecret和agentId，并在我的企业中中复制 企业 ID => corpId 将上面Id填入utils中对应的项目中。
+5、自己申请企业微信，并在应用中新建应用，复制其corpsecret和agentId，并在我的企业中中复制 企业 ID => corpId 将上面Id填入utils目录中的utils.js文件中对应的项目中。
+
+6、将app.js中的云服务id替换成自己的云环境ID
 
 ## 主要功能
 
